@@ -7,9 +7,6 @@ s3 = boto3.client('s3')
 size = int(os.environ['THUMBNAIL_SIZE'])
 
 def s3_thumbnail_generator(event, context):
-    
-    print(event)
-
     bucket = event['Records'][0]['s3']['bucket']['name']
     key = event['Records'][0]['s3']['object']['key']
     
@@ -50,7 +47,4 @@ def upload_to_s3(bucket, key, image):
         ContentType='image/png',
         Key=key,
     )
-
-    print(response)
-
     return '{}/{}/{}'.format(s3.meta.endpoint_url, bucket, key)
