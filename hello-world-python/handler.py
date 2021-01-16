@@ -1,5 +1,5 @@
 
 def hello(event, context):
-    print("hi!")
+    print("function updated!")
 
     return "Hello World!"
