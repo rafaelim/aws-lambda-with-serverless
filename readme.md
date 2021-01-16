@@ -10,6 +10,14 @@
 
 `serverless config credentials --provider aws --key {your_access_key} --secret {your_secret_key} --profile {your_profile}`
 
+### Plugins
+
+#### Installing a new plugin
+
+Plugin list: https://www.serverless.com/plugins/
+
+`serverless plugin install -n {plugin_name}`
+
 ## Creating a new project
 
 ### With Python
