@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "8971339f-ce2b-44bc-b2c2-1c9cb94f67ca",
+		"name": "typescript-rest-api-with-dynamodb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create TODO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"text\": \"random text 2\" }"
+				},
+				"url": {
+					"raw": "https://g2etp5t3mb.execute-api.sa-east-1.amazonaws.com/dev/todos",
+					"protocol": "https",
+					"host": [
+						"g2etp5t3mb",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List TODO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://g2etp5t3mb.execute-api.sa-east-1.amazonaws.com/dev/todos",
+					"protocol": "https",
+					"host": [
+						"g2etp5t3mb",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get TODO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://g2etp5t3mb.execute-api.sa-east-1.amazonaws.com/dev/todos/dbf22280-591b-11eb-815f-a74bd5ef4fc4",
+					"protocol": "https",
+					"host": [
+						"g2etp5t3mb",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"dbf22280-591b-11eb-815f-a74bd5ef4fc4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update TODO",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"text\": \"random text updated\", \"checked\": true }"
+				},
+				"url": {
+					"raw": "https://g2etp5t3mb.execute-api.sa-east-1.amazonaws.com/dev/todos/dbf22280-591b-11eb-815f-a74bd5ef4fc4",
+					"protocol": "https",
+					"host": [
+						"g2etp5t3mb",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"dbf22280-591b-11eb-815f-a74bd5ef4fc4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete TODO",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://g2etp5t3mb.execute-api.sa-east-1.amazonaws.com/dev/todos/dbf22280-591b-11eb-815f-a74bd5ef4fc4",
+					"protocol": "https",
+					"host": [
+						"g2etp5t3mb",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"dbf22280-591b-11eb-815f-a74bd5ef4fc4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
