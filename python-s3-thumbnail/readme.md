@@ -1,7 +1,15 @@
 # S3 Thumbnails
 
-## todo list
+## Getting Started
 
-- [x] Resize an image to be a thumbnail
-- [ ] Handle errors
-- [ ] Save metadata in dynamodb
+### Deploy
+
+`npx sls deploy -v`
+
+### Removing the function
+
+`npx sls remove`
+
+## Testing
+
+To test the function you need to upload a new photo to the s3 bucket and then in a few seconds, the lambda function will generate and upload the thumbnail to the same bucket.

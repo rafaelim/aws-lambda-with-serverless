@@ -1,9 +1,12 @@
+import time
+import uuid
 import boto3
 import cStringIO
 from PIL import Image, ImageOps
 import os
 
 s3 = boto3.client('s3')
+dynamodb = boto3.client('dynamodb')
 size = int(os.environ['THUMBNAIL_SIZE'])
 
 def s3_thumbnail_generator(event, context):
@@ -17,7 +20,18 @@ def s3_thumbnail_generator(event, context):
     thumbnail = image_to_thumbnail(image)
     thumbnail_key = new_filename(key)
 
-    return upload_to_s3(bucket, thumbnail_key, thumbnail)
+    url = upload_to_s3(bucket, thumbnail_key, thumbnail)
+    
+    dynamodb.put_item(
+        TableName=os.environ["DYNAMODB_TABLE"],
+        Item={
+            "id": {'S': str(uuid.uuid4())},
+            "created_at": {'S': str(time.time())},
+            "url": {'S': url}
+        }
+    )
+
+    return url
 
 def get_s3_image(bucket, key):
     response = s3.get_object(Bucket=bucket, Key=key)
