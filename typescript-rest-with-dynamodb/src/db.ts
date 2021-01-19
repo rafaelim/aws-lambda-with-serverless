@@ -1,8 +1,12 @@
 import { DynamoDB } from "aws-sdk";
 
-const dynamoDb = new DynamoDB.DocumentClient({
-  region: "localhost",
-  endpoint: "http://localhost:8000",
-});
+const dbConfig =
+  process.env.ENV === "dev"
+    ? {
+        region: "localhost",
+        endpoint: "http://localhost:8000",
+      }
+    : {};
+const dynamoDb = new DynamoDB.DocumentClient(dbConfig);
 
 export default dynamoDb;

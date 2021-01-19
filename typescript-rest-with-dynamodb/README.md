@@ -6,6 +6,19 @@
 
 `npm install`
 
+### Running locally
+
+#### Plugins install
+
+- `serverless plugin install -n serverless-dynamodb-local`
+- `serverless plugin install -n serverless-offline`
+- `serverless dynamodb install`
+
+#### Starting offline
+
+- Powershell:
+  `$env:ENV="dev" ; $env:AWS_PROFILE="serverless-admin" ; serverless offline start`
+
 ### Deploy
 
 `npx sls deploy -v`
