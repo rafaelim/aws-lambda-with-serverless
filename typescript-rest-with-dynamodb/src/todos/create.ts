@@ -1,8 +1,6 @@
 import { v1 } from "uuid";
-import { DynamoDB } from "aws-sdk";
+import dynamoDb from "../db";
 import { APIGatewayProxyCallback, APIGatewayProxyEventBase } from "aws-lambda";
-
-const dynamoDb = new DynamoDB.DocumentClient();
 
 export const create = (
   event: APIGatewayProxyEventBase<any>,
@@ -43,6 +41,7 @@ export const create = (
       });
     })
     .catch((error) => {
+      console.log(error);
       console.error(
         `Couldn't create the todo item; item id=> ${params.Item.id}`,
       );

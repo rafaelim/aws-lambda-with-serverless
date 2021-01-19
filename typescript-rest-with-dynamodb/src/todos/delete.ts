@@ -1,7 +1,5 @@
 import { APIGatewayEvent, APIGatewayProxyCallback } from "aws-lambda";
-import { DynamoDB } from "aws-sdk";
-
-const dynamoDb = new DynamoDB.DocumentClient();
+import dynamoDb from "../db";
 
 export const deleteFn = (
   event: APIGatewayEvent,

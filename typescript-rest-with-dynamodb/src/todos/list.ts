@@ -1,7 +1,6 @@
 import { APIGatewayEvent, APIGatewayProxyCallback } from "aws-lambda";
-import { DynamoDB } from "aws-sdk";
+import dynamoDb from "../db";
 
-const dynamoDb = new DynamoDB.DocumentClient();
 const params = {
   TableName: process.env.DYNAMODB_TABLE,
 };
